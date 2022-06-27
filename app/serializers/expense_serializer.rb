@@ -20,5 +20,5 @@
 #
 class ExpenseSerializer
   include JSONAPI::Serializer
-  attributes :title, :description, :amount, :category_id
+  attributes :title, :description, :amount, :category_id, :month
 end

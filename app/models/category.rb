@@ -20,4 +20,10 @@ class Category < ApplicationRecord
     def standarize_name
         category.capitalize!
     end
+
+    def total_expenses
+        return 0 unless expenses.count.positive?
+        
+        expenses.sum(:amount).round(2).to_f
+    end
 end

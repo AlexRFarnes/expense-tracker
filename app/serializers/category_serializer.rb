@@ -10,6 +10,13 @@
 #
 class CategorySerializer
   include JSONAPI::Serializer
-  attributes :category, :description
+  attributes :category, :description, :total_expenses
   has_many :expenses
+
+  meta do |category|
+    {
+      grouped_expenses: category.expenses.group_by(&:month)
+    }
+  end
+
 end

@@ -1,8 +1,9 @@
 module Api
     module V1
         class ExpensesController < ApplicationController
-            protect_from_forgery with: :null_session
+            # protect_from_forgery with: :null_session
             before_action :set_expense, only: %i[ edit update destroy ]
+            
 
             def create
                 expense = Expense.new(expense_params)

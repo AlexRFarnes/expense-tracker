@@ -10,7 +10,10 @@ import {
   CardOptionsNote,
 } from "../Style/Card";
 
-const Category = ({ id, attributes: { category, description } }) => {
+const Category = ({
+  id,
+  attributes: { category, description, total_expenses },
+}) => {
   return (
     <CardWrapper>
       <CardHeader>
@@ -19,6 +22,7 @@ const Category = ({ id, attributes: { category, description } }) => {
       <CardBody>
         <CardFieldset>
           <CardOptionsNote>{description}</CardOptionsNote>
+          <CardOptionsNote>NTD {total_expenses.toFixed(2)}</CardOptionsNote>
         </CardFieldset>
         <CardFieldset>
           <CardButton>
