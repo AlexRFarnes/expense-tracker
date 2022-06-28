@@ -13,14 +13,13 @@ export const CardWrapper = styled.div`
 
 export const CardHeader = styled.header`
   padding-top: 32px;
-  padding-bottom: 8px;
+  padding-bottom: 32px;
 `;
 
 export const CardHeading = styled.h1`
   font-size: 24px;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 0;
 `;
 
 export const CardBody = styled.div`
@@ -35,15 +34,49 @@ export const CardFieldset = styled.fieldset`
   border: 0;
 
   & + & {
-    margin-top: 16px;
+    margin-top: 24px;
   }
 
   &:nth-last-of-type(2) {
-    margin-top: 16px;
+    margin-top: 32px;
   }
 
   &:last-of-type {
     text-align: center;
+  }
+`;
+
+export const CardInput = styled.input`
+  padding: 7px 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: 14px;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid #ddd;
+  border-left: 0;
+  transition: border-bottom-color 0.25s ease-in;
+
+  &:focus {
+    border-bottom-color: #e5195f;
+    outline: 0;
+  }
+`;
+
+export const CardTextArea = styled.textarea`
+  padding: 7px 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: 14px;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid #ddd;
+  border-left: 0;
+  transition: border-bottom-color 0.25s ease-in;
+
+  &:focus {
+    border-bottom-color: #e5195f;
+    outline: 0;
   }
 `;
 
@@ -78,16 +111,13 @@ export const CardIcon = styled.span`
     `}
 `;
 
-export const CardOptionsNote = styled.p`
+export const CardOptionsNote = styled.small`
   padding-top: 8px;
   display: block;
   width: 100%;
-  font-size: 16px;
+  font-size: 12px;
   text-align: center;
-`;
-
-export const CardOptionsNoteBold = styled(CardOptionsNote)`
-  font-weight: bold;
+  text-transform: uppercase;
 `;
 
 export const CardOptions = styled.ul`
@@ -122,11 +152,6 @@ export const CardButton = styled.button`
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08);
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
-
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
 
   &:hover {
     box-shadow: 0 15px 15px rgba(0, 0, 0, 0.16);

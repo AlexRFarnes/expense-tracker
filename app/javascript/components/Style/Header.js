@@ -8,12 +8,18 @@ export const Header = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1em;
+  padding: 0.75rem;
   margin-bottom: 2em;
   background-color: #e5195f;
   color: #fff;
+
+  .subheader {
+    margin-top: 0;
+    padding-bottom: 32px;
+  }
 `;
 
 export const Title = styled.h1`
-  font-family: sans-serif;
+  font-size: 48px;
+  margin-botom: 0;
 `;

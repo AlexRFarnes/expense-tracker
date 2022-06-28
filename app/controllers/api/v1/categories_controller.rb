@@ -1,7 +1,7 @@
 module Api
     module V1
         class CategoriesController < ApplicationController
-            # protect_from_forgery with: :null_session
+            protect_from_forgery with: :null_session
             before_action :set_category, only: %i[ show show_all edit update destroy ]
 
             def index

@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+*,*::before, *::after {
+    box-sizing: border-box;
+}
+
+ body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+ }
+
+ h1,h2,h3 {
+    font-family: 'Bitter', serif;
+ }

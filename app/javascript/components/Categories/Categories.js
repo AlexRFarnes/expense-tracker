@@ -2,7 +2,42 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Category from "./Category";
 import styled from "styled-components";
-import { Header, Title } from "../Style/Header";
+import { Link } from "react-router-dom";
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+`;
+
+const CategoryButton = styled.div`
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: block;
+  width: 10rem;
+  text-align: center;
+  padding: 12px 0;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  background-color: #00990d;
+  border: 0;
+  border-radius: 35px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &:hover {
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.16);
+    transform: translate(0, -5px);
+  }
+`;
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);
@@ -15,7 +50,7 @@ const Categories = () => {
         setCategories(resp.data.data);
       })
       .catch(resp => {
-        console.log("Ooop! Something went wrong", resp);
+        console.error("Ooop! Something went wrong", resp);
       });
   }, []); // add an empty array so it only runs once
 
@@ -27,11 +62,10 @@ const Categories = () => {
 
   return (
     <div className='home'>
-      <Header>
-        <Title>Expense Tracker</Title>
-        <p className='subheader'>Always keep track of your expenses!</p>
-      </Header>
-      <div className='grid'>{grid}</div>
+      <Grid>{grid}</Grid>
+      <CategoryButton>
+        <Link to='/new_category'>Add New Category</Link>
+      </CategoryButton>
     </div>
   );
 };

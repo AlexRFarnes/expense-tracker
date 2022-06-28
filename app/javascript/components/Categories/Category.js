@@ -8,6 +8,7 @@ import {
   CardButton,
   CardFieldset,
   CardOptionsNote,
+  CardOptionsNoteBold,
 } from "../Style/Card";
 
 const Category = ({
@@ -22,7 +23,9 @@ const Category = ({
       <CardBody>
         <CardFieldset>
           <CardOptionsNote>{description}</CardOptionsNote>
-          <CardOptionsNote>NTD {total_expenses.toFixed(2)}</CardOptionsNote>
+          <CardOptionsNoteBold>
+            NTD {total_expenses.toFixed(2)}
+          </CardOptionsNoteBold>
         </CardFieldset>
         <CardFieldset>
           <CardButton>

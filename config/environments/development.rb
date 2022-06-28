@@ -61,7 +61,7 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
-  config.debug_exception_response_format = :api
+  # config.debug_exception_response_format = :default
 
 
   # Raises error for missing translations.
