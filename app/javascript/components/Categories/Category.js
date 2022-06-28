@@ -16,14 +16,24 @@ const Category = ({
   id,
   attributes: { category, description, total_expenses },
   handleDelete,
+  handleUpdate,
 }) => {
   return (
     <CardWrapper>
       <CardHeader icon>
+        <CardIcon
+          big
+          eye
+          left
+          color={"neutral"}
+          className='fa-solid fa-pen-to-square'
+          onClick={() => handleUpdate(id)}
+        />
         <CardHeading>{category}</CardHeading>
         <CardIcon
           big
           eye
+          color={"danger"}
           className='fa-solid fa-trash'
           onClick={() => handleDelete(id)}
         />

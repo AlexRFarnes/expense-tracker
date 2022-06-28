@@ -1,23 +1,22 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Category from "./Category/Category";
 import Categories from "./Categories/Categories";
 import NewCategory from "./NewCategory/NewCategory";
-import { Header, Title } from "./Style/Header";
+import EditCategory from "./EditCategory/EditCategory";
+import MainHeader from "./Shared/MainHeader";
 
 const App = () => {
   return (
-    <>
-      <Header>
-        <Title>Expense Tracker</Title>
-        <p className='subheader'>Always keep track of your expenses!</p>
-      </Header>
+    <Router>
+      <MainHeader />
       <Routes>
         <Route exact path='/' element={<Categories />} />
         <Route exact path='/new_category' element={<NewCategory />} />
         <Route exact path='/:id' element={<Category />} />
+        <Route exact path='/edit/:id' element={<EditCategory />} />
       </Routes>
-    </>
+    </Router>
   );
 };
 

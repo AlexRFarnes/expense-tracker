@@ -1,6 +1,8 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import "font-awesome/css/font-awesome.css";
+// import "font-awesome/css/font-awesome.css";
+
+const iconColors = { danger: "#fc1a0f", neutral: "#777" };
 
 export const CardWrapper = styled.div`
   overflow: hidden;
@@ -55,7 +57,15 @@ export const CardFieldset = styled.fieldset`
 `;
 
 export const CardIcon = styled.span`
-  color: #fc1a0f;
+  color: #777;
+  ${props => {
+    return (
+      props.color &&
+      css`
+        color: ${iconColors[props.color]};
+      `
+    );
+  }}
   cursor: pointer;
   opacity: 0.25;
   transition: opacity 0.25s ease-in;
@@ -77,6 +87,15 @@ export const CardIcon = styled.span`
       top: 16px;
       right: 16px;
     `}
+
+    ${props =>
+    props.left &&
+    css`
+      position: absolute;
+      top: 16px;
+      left: 16px;
+    `}
+
 
   ${props =>
     props.small &&

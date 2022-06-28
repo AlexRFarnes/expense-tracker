@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState, useRef } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import {
   CardWrapper,
   CardHeader,
@@ -12,8 +12,8 @@ import {
 } from "../Style/CardForm";
 import axios from "axios";
 
-const NewCategory = () => {
-  const [newCategory, setNewCategory] = useState({
+const EditCategory = () => {
+  const [editCategory, setEditCategory] = useState({
     category: "",
     description: "",
   });
@@ -22,42 +22,47 @@ const NewCategory = () => {
 
   useEffect(() => {
     categoryInputRef.current.focus();
+    axios
+      .get(`/api/v1/categories/${params.id}`)
+      .then(resp => setEditCategory(resp.data.data.attributes))
+      .catch(resp => console.error(resp));
   }, []);
+
+  let params = useParams();
 
   let navigate = useNavigate();
 
   const handleChange = e => {
     e.preventDefault();
-    setNewCategory({ ...newCategory, [e.target.name]: e.target.value });
+    setEditCategory({ ...editCategory, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = e => {
     e.preventDefault();
+
     const csrfToken = document.querySelector("[name=csrf-token]").content;
     axios.defaults.headers.common["X-CSRF-TOKEN"] = csrfToken;
 
     axios
-      .post("/api/v1/categories", newCategory)
+      .patch(`/api/v1/categories/${params.id}`, editCategory)
       .then(resp => {
         navigate("/");
       })
       .catch(resp => console.error(resp));
-
-    setNewCategory({ category: "", description: "" });
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <CardWrapper>
         <CardHeader>
-          <CardHeading>Create New Category</CardHeading>
+          <CardHeading>Edit {editCategory.category} Category</CardHeading>
         </CardHeader>
         <CardBody>
           <CardFieldset>
             <CardInput
-              onChange={handleChange}
               name='category'
-              value={NewCategory.category}
+              onChange={handleChange}
+              value={editCategory.category}
               placeholder='Category Title'
               type='text'
               ref={categoryInputRef}
@@ -66,16 +71,16 @@ const NewCategory = () => {
           </CardFieldset>
           <CardFieldset>
             <CardTextArea
-              onChange={handleChange}
               name='description'
-              value={NewCategory.description}
+              onChange={handleChange}
+              value={editCategory.description}
               placeholder='Category Description'
               type='text'
               required
             />
           </CardFieldset>
           <CardFieldset>
-            <CardButton type='submit'>Add Category</CardButton>
+            <CardButton type='submit'>Update Category</CardButton>
           </CardFieldset>
         </CardBody>
       </CardWrapper>
@@ -83,4 +88,4 @@ const NewCategory = () => {
   );
 };
 
-export default NewCategory;
+export default EditCategory;

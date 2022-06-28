@@ -8,10 +8,14 @@ export const Header = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0.75rem;
+  padding: 2rem;
   margin-bottom: 2em;
   background-color: #e5195f;
   color: #fff;
+
+  a {
+    color: inherit;
+  }
 
   .subheader {
     margin-top: 0;
@@ -22,4 +26,6 @@ export const Header = styled.div`
 export const Title = styled.h1`
   font-size: 48px;
   margin-botom: 0;
+  padding: 0;
+  margin: 0;
 `;
