@@ -32,4 +32,5 @@ class Expense < ApplicationRecord
     def month
       self.created_at.strftime("%b, %Y")
     end
+
 end

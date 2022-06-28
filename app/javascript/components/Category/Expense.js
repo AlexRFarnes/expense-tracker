@@ -1,22 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import {
-  CardWrapper,
+  CardBody,
+  CardFieldset,
   CardHeader,
   CardHeading,
-  CardBody,
-  CardButton,
-  CardFieldset,
   CardOptionsNote,
+  CardWrapper,
   CardOptionsNoteBold,
   CardIcon,
 } from "../Style/Card";
 
-const Category = ({
-  id,
-  attributes: { category, description, total_expenses },
-  handleDelete,
+const Expense = ({
+  expense: { id, title, description, amount },
   handleUpdate,
+  handleDelete,
+  month,
 }) => {
   return (
     <CardWrapper>
@@ -29,30 +27,25 @@ const Category = ({
           className='fa-solid fa-pen-to-square'
           onClick={() => handleUpdate(id)}
         />
-        <CardHeading>{category}</CardHeading>
+        <CardHeading>{title}</CardHeading>
         <CardIcon
           big
           eye
           color={"danger"}
           className='fa-solid fa-trash'
-          onClick={() => handleDelete(id)}
+          onClick={() => handleDelete(id, month)}
         />
       </CardHeader>
       <CardBody>
         <CardFieldset>
           <CardOptionsNote>{description}</CardOptionsNote>
           <CardOptionsNoteBold>
-            $ {total_expenses.toFixed(2)}
+            $ {Number(amount).toFixed(2)}
           </CardOptionsNoteBold>
-        </CardFieldset>
-        <CardFieldset>
-          <CardButton>
-            <Link to={`/${id}`}>View Category</Link>
-          </CardButton>
         </CardFieldset>
       </CardBody>
     </CardWrapper>
   );
 };
 
-export default Category;
+export default Expense;

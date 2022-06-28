@@ -15,7 +15,7 @@ class CategorySerializer
 
   meta do |category|
     {
-      grouped_expenses: category.expenses.group_by(&:month)
+      grouped_expenses: category.expenses.group_by(&:month).sort_by{|obj| Date.parse obj[0]}.reverse
     }
   end
 

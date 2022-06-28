@@ -2,9 +2,10 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Category from "./Category/Category";
 import Categories from "./Categories/Categories";
-import NewCategory from "./NewCategory/NewCategory";
-import EditCategory from "./EditCategory/EditCategory";
-import MainHeader from "./Shared/MainHeader";
+import NewCategory from "./Categories/NewCategory";
+import EditCategory from "./Categories/EditCategory";
+import MainHeader from "./MainHeader/MainHeader";
+import EditExpense from "./Category/EditExpense";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route exact path='/new_category' element={<NewCategory />} />
         <Route exact path='/:id' element={<Category />} />
         <Route exact path='/edit/:id' element={<EditCategory />} />
+        <Route exact path='/:id/edit/:expense_id' element={<EditExpense />} />
       </Routes>
     </Router>
   );

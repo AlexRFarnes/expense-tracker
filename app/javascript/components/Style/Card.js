@@ -25,7 +25,7 @@ export const CardHeader = styled.header`
     `}
 `;
 
-export const CardHeading = styled.h1`
+export const CardHeading = styled.p`
   font-size: 24px;
   font-weight: bold;
   text-align: center;
