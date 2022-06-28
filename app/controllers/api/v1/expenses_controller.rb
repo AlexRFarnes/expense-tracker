@@ -2,8 +2,11 @@ module Api
     module V1
         class ExpensesController < ApplicationController
             protect_from_forgery with: :null_session
-            before_action :set_expense, only: %i[ edit update destroy ]
+            before_action :set_expense, only: %i[ show edit update destroy ]
             
+            def show
+                render json: ExpenseSerializer.new(@expense).serializable_hash.to_json
+            end
 
             def create
                 expense = Expense.new(expense_params)

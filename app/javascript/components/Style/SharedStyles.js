@@ -7,7 +7,7 @@ export const CardGrid = styled.div`
   margin-bottom: 72px;
 `;
 
-export const CategoryButton = styled.div`
+export const AddNewButton = styled.div`
   position: fixed;
   bottom: 2rem;
   right: 2rem;

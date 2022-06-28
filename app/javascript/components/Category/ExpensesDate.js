@@ -2,11 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { CardGrid } from "../Style/SharedStyles";
 import Expense from "./Expense";
+import { Link } from "react-router-dom";
+import { AddNewButton } from "../Style/SharedStyles";
 
 const MonthWrapper = styled.div``;
 
 const MonthTitle = styled.div`
-  background: #990237;
+  background: #ea6090;
   font-size: 26px;
   color: #fff;
   display: flex;
@@ -29,10 +31,15 @@ const ExpensesDate = ({ groupedExpenses, handleUpdate, handleDelete }) => {
     );
   });
   return (
-    <MonthWrapper>
-      <MonthTitle>{month}</MonthTitle>
-      <CardGrid>{expenses}</CardGrid>
-    </MonthWrapper>
+    <>
+      <MonthWrapper>
+        <MonthTitle>{month}</MonthTitle>
+        <CardGrid>{expenses}</CardGrid>
+      </MonthWrapper>
+      <AddNewButton>
+        <Link to='/new_expense'>Add New Expense</Link>
+      </AddNewButton>
+    </>
   );
 };
 

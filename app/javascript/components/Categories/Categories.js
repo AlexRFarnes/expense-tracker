@@ -3,7 +3,7 @@ import axios from "axios";
 import Category from "./Category";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
-import { CardGrid, CategoryButton } from "../Style/SharedStyles";
+import { CardGrid, AddNewButton } from "../Style/SharedStyles";
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);
@@ -50,9 +50,9 @@ const Categories = () => {
   return (
     <div className='home'>
       <CardGrid>{grid}</CardGrid>
-      <CategoryButton>
+      <AddNewButton>
         <Link to='/new_category'>Add New Category</Link>
-      </CategoryButton>
+      </AddNewButton>
     </div>
   );
 };
