@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
 `;
 
 const CategoryButton = styled.div`
@@ -54,9 +54,23 @@ const Categories = () => {
       });
   }, []); // add an empty array so it only runs once
 
+  const handleDelete = id => {
+    if (window.confirm("Delete this category?")) {
+      axios.delete(`/api/v1/categories/${id}`);
+      setCategories(prevState =>
+        prevState.filter(category => category.id != id)
+      );
+    }
+  };
+
   const grid = categories.map((category, index) => {
     return (
-      <Category key={index} id={category.id} attributes={category.attributes} />
+      <Category
+        handleDelete={handleDelete}
+        key={index}
+        id={category.id}
+        attributes={category.attributes}
+      />
     );
   });
 

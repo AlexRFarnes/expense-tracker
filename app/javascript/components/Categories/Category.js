@@ -9,16 +9,24 @@ import {
   CardFieldset,
   CardOptionsNote,
   CardOptionsNoteBold,
+  CardIcon,
 } from "../Style/Card";
 
 const Category = ({
   id,
   attributes: { category, description, total_expenses },
+  handleDelete,
 }) => {
   return (
     <CardWrapper>
-      <CardHeader>
+      <CardHeader icon>
         <CardHeading>{category}</CardHeading>
+        <CardIcon
+          big
+          eye
+          className='fa-solid fa-trash'
+          onClick={() => handleDelete(id)}
+        />
       </CardHeader>
       <CardBody>
         <CardFieldset>

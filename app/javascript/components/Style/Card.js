@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import "font-awesome/css/font-awesome.css";
 
 export const CardWrapper = styled.div`
   overflow: hidden;
@@ -14,6 +15,12 @@ export const CardWrapper = styled.div`
 export const CardHeader = styled.header`
   padding-top: 32px;
   padding-bottom: 8px;
+
+  ${props =>
+    props.icon &&
+    css`
+      position: relative;
+    `}
 `;
 
 export const CardHeading = styled.h1`
@@ -48,7 +55,7 @@ export const CardFieldset = styled.fieldset`
 `;
 
 export const CardIcon = styled.span`
-  color: #666;
+  color: #fc1a0f;
   cursor: pointer;
   opacity: 0.25;
   transition: opacity 0.25s ease-in;
@@ -67,8 +74,8 @@ export const CardIcon = styled.span`
     props.eye &&
     css`
       position: absolute;
-      top: 8px;
-      right: 0;
+      top: 16px;
+      right: 16px;
     `}
 
   ${props =>
