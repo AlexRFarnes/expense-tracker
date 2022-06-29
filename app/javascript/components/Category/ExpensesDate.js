@@ -2,8 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { CardGrid } from "../Style/SharedStyles";
 import Expense from "./Expense";
-import { Link } from "react-router-dom";
-import { AddNewButton } from "../Style/SharedStyles";
 
 const MonthWrapper = styled.div``;
 
@@ -17,7 +15,12 @@ const MonthTitle = styled.div`
   margin-bottom: -16px;
 `;
 
-const ExpensesDate = ({ groupedExpenses, handleUpdate, handleDelete }) => {
+const ExpensesDate = ({
+  groupedExpenses,
+  category_id,
+  handleUpdate,
+  handleDelete,
+}) => {
   const month = groupedExpenses[0];
   const expenses = groupedExpenses[1].map(expense => {
     return (
@@ -31,15 +34,10 @@ const ExpensesDate = ({ groupedExpenses, handleUpdate, handleDelete }) => {
     );
   });
   return (
-    <>
-      <MonthWrapper>
-        <MonthTitle>{month}</MonthTitle>
-        <CardGrid>{expenses}</CardGrid>
-      </MonthWrapper>
-      <AddNewButton>
-        <Link to='/new_expense'>Add New Expense</Link>
-      </AddNewButton>
-    </>
+    <MonthWrapper>
+      <MonthTitle>{month}</MonthTitle>
+      <CardGrid>{expenses}</CardGrid>
+    </MonthWrapper>
   );
 };
 

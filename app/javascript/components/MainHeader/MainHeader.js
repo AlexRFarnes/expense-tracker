@@ -9,7 +9,7 @@ const MainHeader = () => {
         <NavLink to='/'>
           <Title>Expense Tracker</Title>
         </NavLink>
-        <p className='subheader'>Always keep track of your expenses!</p>
+        <p className='subheader'>Never loose track of any of your expenses!</p>
       </Header>
     </nav>
   );

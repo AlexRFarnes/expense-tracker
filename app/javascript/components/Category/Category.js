@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import ExpensesDate from "./ExpensesDate";
+import { Link } from "react-router-dom";
+import { AddNewButton } from "../Style/SharedStyles";
 
 const Category = () => {
   const [expenses, setExpenses] = useState({});
@@ -43,12 +45,20 @@ const Category = () => {
           handleDelete={handleDelete}
           handleUpdate={handleUpdate}
           key={index}
+          category_id={params.id}
           groupedExpenses={groupedExpenses}></ExpensesDate>
       )
     );
   });
 
-  return <div className='something'>{allExpenses}</div>;
+  return (
+    <>
+      {allExpenses}
+      <AddNewButton>
+        <Link to={`/${params.id}/new_expense`}>Add New Expense</Link>
+      </AddNewButton>
+    </>
+  );
 };
 
 export default Category;
