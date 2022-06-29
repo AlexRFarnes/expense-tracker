@@ -39,8 +39,20 @@ The app is the capstone project of the bootcamp to put all the knowledge we acqu
 
 ## Screenshots
 
-![]()
-<!-- [Demo]() -->
+View of all categories
+![Screenshot 2022-06-29 at 07-58-03 ExpenseTracker](https://user-images.githubusercontent.com/57517804/176330229-fc51f5e2-3a25-4f4e-aa38-edc245b4b6e5.png)
+View for creating a new category
+![Screenshot 2022-06-29 at 09-17-51 ExpenseTracker](https://user-images.githubusercontent.com/57517804/176330418-8c666a21-5d64-4472-83ea-b0b468526ce8.png)
+View for editing a category
+![Screenshot 2022-06-29 at 08-07-46 ExpenseTracker](https://user-images.githubusercontent.com/57517804/176330248-bc8bffaa-b722-4621-a6d2-807f77859953.png)
+View of all expenses for that category
+![Screenshot 2022-06-29 at 08-06-37 ExpenseTracker](https://user-images.githubusercontent.com/57517804/176330266-998181b9-2fed-4ab7-b4bb-3ad9ca4cd088.png)
+View for creating a new expense
+![Screenshot 2022-06-29 at 09-19-50 ExpenseTracker](https://user-images.githubusercontent.com/57517804/176330615-8e764d6a-1caa-4de5-80b5-23c2b3cb77da.png)
+View for editing an expense
+![Screenshot 2022-06-29 at 08-07-28 ExpenseTracker](https://user-images.githubusercontent.com/57517804/176330284-5b080165-8055-4245-9366-fe81f6fc7015.png)
+
+[Demo](https://spendex-app-alex.herokuapp.com/)
 
 ## Built with
 
@@ -68,6 +80,7 @@ List of features ready and TODOs for future development
 
 Future work
 
+- Add the current category name on the expenses show, create and update views
 - Create new Users
 - Sign in and sign up functionality
 - JWT Auth token
