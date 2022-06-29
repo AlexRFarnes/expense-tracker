@@ -1,6 +1,6 @@
 # Spendex App (Capstone Project)
 
-> Spendex App is an app for keeping tracks of all your expenses built for the Decisiv Inc & LaserAnts Ruby on Rails/React Bootcamp. 
+> Spendex App is a Full-Stack app for keeping tracks of all your expenses built for the Decisiv Inc & LaserAnts Ruby on Rails/React Bootcamp. It uses Ruby on Rails for the backend and React for the frontend.
 
 ## Table of contents
 - [Spendex App (Capstone Project)](#spendex-app-capstone-project)
@@ -35,7 +35,7 @@ To get a local copy follow these steps:
 
 ## General info
 
-The app is the capstone project of the bootcamp to put all the knowledge we acquire through it into a practical project. My project is an expense tracker for keeping track of expenses by categories. The app allows to create categories, edit them and delete them. Each category consists of a title and a description. Also, each category displays the total amount of expenses. Inside each category, all the expenses for that category are displayed grouped by month. As with categories, expenses can be created, edited and deleted. 
+The app is the capstone project of the bootcamp to put all the knowledge we acquire through it into a practical project. My project is an expense tracker for keeping track of expenses by categories. The app allows to create categories, edit them and delete them. Each category consists of a title and a description. Also, each category displays the total amount of expenses. Inside each category, all the expenses for that category are displayed grouped by month. As with categories, expenses can be created, edited and deleted. The app was styled with Styled Components and has a minimalist design.
 
 ## Screenshots
 
