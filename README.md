@@ -2,6 +2,8 @@
 
 > Spendex App is a Full-Stack app for keeping tracks of all your expenses built for the Decisiv Inc & LaserAnts Ruby on Rails/React Bootcamp. It uses Ruby on Rails for the backend and React for the frontend.
 
+[Demo](https://spendex-app-alex.herokuapp.com/)
+
 ## Table of contents
 - [Spendex App (Capstone Project)](#spendex-app-capstone-project)
   - [Table of contents](#table-of-contents)
@@ -56,9 +58,6 @@ The app is the capstone project of the bootcamp to put all the knowledge we acqu
 
 ### View for editing an expense
 ![Screenshot 2022-06-29 at 08-07-28 ExpenseTracker](https://user-images.githubusercontent.com/57517804/176330284-5b080165-8055-4245-9366-fe81f6fc7015.png)
-
-
-[Demo](https://spendex-app-alex.herokuapp.com/)
 
 ## Built with
 
